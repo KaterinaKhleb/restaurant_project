@@ -1,28 +1,73 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div id="app">
+   <Header />
+      <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import Header from './components/header.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Header
   }
 }
 </script>
 
-<style>
+<style scoped>
+
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  border: 20px solid #3E603B;
+    margin: 0 !important;
+  box-sizing: border-box;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+}
+
+
+/* Tablet horiz to vertical
+===============================*/
+@media (min-width: 1024px) and (max-width: 1280px)  { 
+
+#app {
+  border: 17px solid #3E603B;
+}
+
+
+}
+
+/* Landscape Tablet to Desktop
+===============================*/
+@media (min-width: 768px) and (max-width: 1023px) {
+
+#app {
+  border:14px solid #3E603B;
+}
+
+
+}
+
+
+/* Mobile to Tablet Portrait
+===============================*/
+@media (min-width: 480px) and (max-width: 767px) {
+
+#app {
+  border: 8px solid #3E603B;
+}
+
+}
+@media (max-width: 480px) {
+
+#app {
+  border: 5px solid #3E603B;
+}
+
 }
 </style>
