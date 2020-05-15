@@ -342,6 +342,14 @@ display: none;
 display: none;
     
 }
+.card:hover {
+  transform: translateY(-10px);;
+}
+.card:hover ~ .card {
+  position: relative;
+  left: 2px;
+  transition: 0.4s ease-out;
+}
 
 }
 @media (max-width: 480px) {
@@ -362,6 +370,13 @@ display: none;
 display: none;
     
 }
-
+.card:hover {
+  transform: none;
+}
+.card:hover ~ .card {
+  position: relative;
+  left: 0px;
+  transition: 0.4s ease-out;
+}
 }
 </style>

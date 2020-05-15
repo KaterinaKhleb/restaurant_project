@@ -1,8 +1,7 @@
 <template>
     <div class="main">
         <h1>BOOK A TABLE</h1>
-        <p>Mauris rhoncus aenean vel elit scelerisque mauris pellentesque. 
-            Pretium quam vulputate dignissim suspendisse in est ante in nibh. Scelerisque in dictum non consectetur a erat nam at lectus.</p>
+        <p>In a case if you need any special arrangement, such as children chair, please, inform our phone consultant about it. Number of guests can be flexible to plus-minus two guests.</p>
 
                         <form>
                             <div class="half-form">
