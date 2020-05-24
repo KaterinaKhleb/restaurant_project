@@ -108,7 +108,6 @@ h1:after, h1:before {
 
 }
 
-
 .card {
     margin: 15px;
     transition: 0.4s ease-out;
@@ -116,17 +115,6 @@ h1:after, h1:before {
     left: 0px;
 }
 
-
-.card:hover {
-  transform: translateY(-20px);
-  transition: 0.4s ease-out;
-}
-
-.card:hover ~ .card {
-  position: relative;
-  left: 40px;
-  transition: 0.4s ease-out;
-}
 .image {
     position: absolute;
   width: 300px !important;
@@ -159,8 +147,8 @@ h1:after, h1:before {
 }
 
 .wineimage:hover {
-    transform: rotate(15deg) scale(1.1, 1.1) translateY(-50px);
-    transition: 300ms linear;
+    transform: rotate(3deg) scale(1.1, 1.1) translateY(-20px);
+    transition: 100ms linear;
 
 }
 
@@ -219,15 +207,15 @@ h1:after, h1:before {
 
 
 .card:hover {
-  transform: translateY(-20px);
-  transition: 0.4s ease-out;
+  transform: translateY(-20px) translateX(10px);
+  transition: 0.3s ease-out;
 }
 
-.card:hover ~ .card {
+/* .card:hover ~ .card {
   position: relative;
   left: 40px;
   transition: 0.4s ease-out;
-}
+} */
 .image {
     position: absolute;
   width: 300px !important;
@@ -259,11 +247,7 @@ h1:after, h1:before {
     transition: 300ms linear;
 }
 
-.wineimage:hover {
-    transform: rotate(15deg) scale(1.1, 1.1) translateY(-50px);
-    transition: 300ms linear;
 
-}
 
 .Masthead {
     height: 3000vh !important;
@@ -343,12 +327,7 @@ display: none;
     
 }
 .card:hover {
-  transform: translateY(-10px);;
-}
-.card:hover ~ .card {
-  position: relative;
-  left: 2px;
-  transition: 0.4s ease-out;
+  transform: translateY(-10px) translateX(2px);
 }
 
 }
@@ -373,10 +352,6 @@ display: none;
 .card:hover {
   transform: none;
 }
-.card:hover ~ .card {
-  position: relative;
-  left: 0px;
-  transition: 0.4s ease-out;
-}
+
 }
 </style>
