@@ -252,7 +252,7 @@ const state = {
             id: 7,
             city: "Tallin",
             country: "Estonia",
-            address: " Viru tänav 18, 10140 Tallinn, Estonia",
+            address: " Viru tänav street 18, 10140 Tallinn, Estonia",
             monfri: "8am - 10pm",
             saturday: "10am - 10pm",
             sunday: "10am - 8pm",
@@ -274,14 +274,14 @@ const state = {
     persons: [{
             id: 1,
             name: "Orson Colon",
-            position: "Main cheff",
+            position: "Chief Cook",
             location: "New-York",
             src: "person1",
         },
         {
             id: 2,
             name: "Jolene Gilliam",
-            position: "Main cheff",
+            position: "Chief Cook",
             location: "Sevilla",
             src: "person2",
 
@@ -289,14 +289,14 @@ const state = {
         {
             id: 3,
             name: "Maxime Thornton",
-            position: "Main cheff",
+            position: "Chief Cook",
             location: "Tallin",
             src: "person3",
         },
         {
             id: 4,
             name: "Austin Leal",
-            position: "Main cheff",
+            position: "Chief Cook",
             location: "Brasilia",
             src: "person4",
 
@@ -304,7 +304,7 @@ const state = {
         {
             id: 5,
             name: "Jolene Gilliam",
-            position: "Main cheff",
+            position: "Chief Cook",
             location: "Munich",
             src: "person5",
 
@@ -312,7 +312,7 @@ const state = {
         {
             id: 6,
             name: "Caiden Hobbs",
-            position: "Main cheff",
+            position: "Chief Cook",
             location: "Florence",
             src: "person6",
 
@@ -320,7 +320,7 @@ const state = {
         {
             id: 7,
             name: "Lillie-Mae Cantu",
-            position: "Main cheff",
+            position: "Chief Cook",
             location: "Canberra",
             src: "person7",
 
@@ -328,7 +328,7 @@ const state = {
         {
             id: 8,
             name: "Matteo Rowe",
-            position: "Main cheff",
+            position: "Chief Cook",
             location: "Denver",
             src: "person8",
 
@@ -336,7 +336,7 @@ const state = {
         {
             id: 9,
             name: "Mariana Mcphee",
-            position: "Second cheff",
+            position: "Senior Chief",
             location: "Denver",
             src: "person9",
 

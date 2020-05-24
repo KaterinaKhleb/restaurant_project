@@ -1,17 +1,20 @@
 <template>
-    <div class="main">
+    <div class="main-person"  @mouseover="hovered = true"  @mouseleave="hovered = false">
         <div class="img-holder">
-                   <img  :src="getImgUrl(person.src)" v-bind:alt="person.src" />
+                   <img class="photo" :src="getImgUrl(person.src)" v-bind:alt="person.src" />
                      <div v-bind:class="classColor" class="overlay">
-                    <div class="text">
-                        <img class="icon" src="../assets/icon1.svg"> 
-                        <img class="icon" src="../assets/icon2.svg"> 
-                    </div>
-            </div>
+                            <div class="text">
+                             
+                            </div>
+                      </div>
             
         </div>
+
             <h1>{{person.name}}</h1>
                 <p>{{person.position}} in {{person.location}}</p>
+
+                   <img v-bind:class="{ visible: hovered }" class="icon icon-left" src="../assets/linkedin.svg"> 
+                    <img  v-bind:class="{ visible: hovered }" class="icon icon-right" src="../assets/facebook.svg"> 
 
     </div>
 </template>
@@ -24,7 +27,8 @@
       },
         data () {
             return {
-                msg: 'Person'
+                msg: 'Person',
+                hovered: false
             }
         },
         methods: {
@@ -46,7 +50,7 @@
 
 <style scoped>
 
-.main{
+.main-person{
 
 }
 img {
@@ -55,7 +59,8 @@ img {
 }
 h1{
     color:#3E603B;
-    margin: 15px auto 0px auto
+    margin: 15px auto 0px auto;
+    font-size:24px
 }
 p{
     color:#7d2d3f;
@@ -65,30 +70,37 @@ p{
 }
 .overlay {
   position: absolute;
-  bottom: 100%;
+  bottom: 0;
   left: 0;
   right: 0;
   overflow: hidden;
   width: 100%;
-  height:0;
+  height:100%;
   transition: .3s ease;
-  opacity:0.9
+  opacity:0;
+  background-color: black
 }
-.green {
+/* .green {
   background-color: #3E603B;
 
 }
 .red {
   background-color: #7d2d3f;
+} */
 
+.main-person:hover .photo{
+  -webkit-filter: grayscale(100%); 
+  filter: grayscale(100%);
 }
 
-.img-holder:hover .overlay {
-  bottom: 0;
-  height: 100%;
+.main-person:hover .overlay {
+  opacity: 0.4;
 }
+
+
 .img-holder {
   position: relative;
+  transition: all 0.3s;
   width: 100%;
 }
 
@@ -104,13 +116,38 @@ p{
   text-align: center;
 }
 .icon {
-    width: 35px;
+    width: 32px;
     height:auto;
     margin:5px;
     cursor:pointer
 }
 
+.icon-left {
+    position: absolute;
+    left:10px;
+    bottom:10px;
+    opacity: 0;
+    transition: all 0.3s
+}
 
+.icon-right {
+    position: absolute;
+    right:10px;
+    bottom:10px;
+    opacity: 0;
+    transition: all 0.3s
+}
+
+.icon-right:hover {
+    transform: rotate(15deg) scale(1.1);
+}
+
+.icon-left:hover {
+    transform: rotate(-15deg) scale(1.1);
+}
+.visible {
+    opacity: 1;
+}
 
 /* Tablet horiz to vertical
 ===============================*/
