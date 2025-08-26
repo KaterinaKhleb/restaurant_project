@@ -184,14 +184,14 @@ const state = {
 
     locations: [{
             id: 1,
-            city: "New-York",
+            city: "New York",
             country: "USA",
             address: " 92-02 Atlantic Ave, Jamaica, NY 11416, USA",
             monfri: "8am - 10pm",
             saturday: "10am - 10pm",
             sunday: "10am - 8pm",
             phone: "+555 876743423",
-            email: "katesplace_ny@gmail.com"
+            email: "cozynight_ny@pizza.com"
         },
         {
             id: 2,
@@ -202,7 +202,7 @@ const state = {
             saturday: "8am - 10pm",
             sunday: "8am - 8pm",
             phone: "+555 028369730",
-            email: "katesplace_dv@gmail.com"
+            email: "cozynight_dv@pizza.com"
         },
         {
             id: 3,
@@ -213,7 +213,7 @@ const state = {
             saturday: "11am - 10pm",
             sunday: "closed",
             phone: "+555 876743423",
-            email: "katesplace_bz@gmail.com"
+            email: "cozynight_bz@pizza.com"
         },
         {
             id: 4,
@@ -224,7 +224,7 @@ const state = {
             saturday: "9am - 11pm",
             sunday: "10am - 8pm",
             phone: "+555 893843423",
-            email: "katesplace_sp@gmail.com"
+            email: "cozynight_sp@pizza.com"
         },
         {
             id: 5,
@@ -235,7 +235,7 @@ const state = {
             saturday: "9am - 10pm",
             sunday: "closed",
             phone: "+555 122143423",
-            email: "katesplace_it@gmail.com"
+            email: "cozynight_it@pizza.com"
         },
         {
             id: 6,
@@ -246,7 +246,7 @@ const state = {
             saturday: "11am - 9pm",
             sunday: "10am - 8pm",
             phone: "+555 887245132",
-            email: "katesplace_de@gmail.com"
+            email: "cozynight_de@pizza.com"
         },
         {
             id: 7,
@@ -257,7 +257,7 @@ const state = {
             saturday: "10am - 10pm",
             sunday: "10am - 8pm",
             phone: "+555 913243736",
-            email: "katesplace_es@gmail.com"
+            email: "cozynight_es@pizza.com"
         },
         {
             id: 8,
@@ -268,14 +268,14 @@ const state = {
             saturday: "10am - 9pm",
             sunday: "closed",
             phone: "+555 71293423",
-            email: "katesplace_as@gmail.com"
+            email: "cozynight_as@pizza.com"
         },
     ],
     persons: [{
             id: 1,
             name: "Orson Colon",
             position: "Chief Cook",
-            location: "New-York",
+            location: "New York",
             src: "person1",
         },
         {

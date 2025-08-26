@@ -1,357 +1,322 @@
 <template>
-    <div class="main">
+  <div class="main">
+    <h1 id="pizza" class="title-section-pizza">PIZZA</h1>
 
-        <h1 id="pizza" class="title-section-pizza"> PIZZA</h1>
-
-        <div class="side-cont">
-            <parallax :speed-factor="0.6" direction="down">
-            <img class='image' src="../assets/pizza_draw.png" alt="wine image"> 
-            </parallax>
-        </div>
-
-        <div class="menu-container">
-            <div v-for="pizza in allPizza" :key="pizza.id" class="card">
-                
-                <CardPizza  v-if="pizza.src" :pizza='pizza' />
-
-            </div>
-        </div>
-
- 
-
-        <h1 id="wine" class="title-section-wine"> WINE</h1>
-
-        <div class="menu-container">
-           <div v-for="wine in allWine" :key="wine.id" class="card">
-                
-                <CardWine  v-if="wine.src" :wine='wine' />
-
-            </div>
-        </div>
-
-    
-            <div class="side-cont wine-side">
-            <!-- <parallax :speed-factor="0.15" direction="up"> -->
-            <img class='image wineimage' src="../assets/wine_draw.png" alt="wine image"> 
-            <!-- </parallax> -->
-        </div>
-
-
-        
-
+    <div class="side-cont">
+      <parallax :speed-factor="0.6" direction="down">
+        <img class="image" src="../assets/pizza_draw.png" alt="wine image" />
+      </parallax>
     </div>
+
+    <div class="menu-container">
+      <div v-for="pizza in allPizza" :key="pizza.id" class="card">
+        <CardPizza v-if="pizza.src" :pizza="pizza" />
+      </div>
+    </div>
+
+    <h1 id="wine" class="title-section-wine">WINE</h1>
+
+    <div class="menu-container">
+      <div v-for="wine in allWine" :key="wine.id" class="card">
+        <CardWine v-if="wine.src" :wine="wine" />
+      </div>
+    </div>
+
+    <div class="side-cont wine-side">
+      <!-- <parallax :speed-factor="0.15" direction="up"> -->
+      <img
+        class="image wineimage"
+        src="../assets/wine_draw.png"
+        alt="wine image"
+      />
+      <!-- </parallax> -->
+    </div>
+  </div>
 </template>
 
 <script>
+import CardPizza from "../components/cardPizza.vue";
+import CardWine from "../components/cardWine.vue";
+import { mapGetters } from "vuex";
+import Parallax from "vue-parallaxy";
 
-    import CardPizza from "../components/cardPizza.vue"
-    import CardWine from "../components/cardWine.vue"
-    import { mapGetters } from 'vuex';
-     import Parallax from 'vue-parallaxy'
+export default {
+  name: "Menu",
+  computed: mapGetters(["allPizza", "allWine"]),
+  components: {
+    CardPizza,
+    CardWine,
+    Parallax,
+  },
+  data() {
+    return {
+      msg: "Menu",
+    };
+  },
 
-    export default {
-        name: 'Menu',
-        computed: mapGetters(['allPizza', 'allWine']),
-          components: {
-                CardPizza,
-                CardWine,
-                Parallax
-            },
-        data () {
-            return {
-                msg: 'Menu'
-            }
-        },
-    
-        // 
-    }
+  //
+};
 </script>
 
 <style scoped>
-
 .main {
-    margin-top: 4%;
+  margin-top: 4%;
 }
-.title-section-pizza{
-    text-align: center;
-    font-size: 36px;
-    color: #3E603B;
+.title-section-pizza {
+  text-align: center;
+  font-size: 36px;
+  color: #3e603b;
 }
 .title-section-wine {
-    text-align: center;
-    font-size: 36px;
-    color: #7d2d3f;
+  text-align: center;
+  font-size: 36px;
+  color: #7d2d3f;
 }
-h1:after, h1:before {
-    content:"\A";
-    width:10px;
-    height:10px;
-    border-radius:50%;
-    background: #3E603B;
-    display:inline-block;
-    margin: 10px 20px;
+h1:after,
+h1:before {
+  content: "\A";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #3e603b;
+  display: inline-block;
+  margin: 10px 20px;
 }
-.title-section-wine:after, .title-section-wine:before {
-    content:"\A";
-    width:10px;
-    height:10px;
-    border-radius:50%;
-    background: #7d2d3f;
-    display:inline-block;
-    margin: 10px 20px;
+.title-section-wine:after,
+.title-section-wine:before {
+  content: "\A";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #7d2d3f;
+  display: inline-block;
+  margin: 10px 20px;
 }
 .menu-container {
-    display: grid;
-    width: 60%;
-    margin: auto;
-    grid-template-columns: repeat(4, 1fr)
-
+  display: grid;
+  width: 60%;
+  margin: auto;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .card {
-    margin: 15px;
-    transition: 0.4s ease-out;
-    position: relative;
-    left: 0px;
+  margin: 15px;
+  transition: 0.4s ease-out;
+  position: relative;
+  left: 0px;
 }
 
 .image {
-    position: absolute;
+  position: absolute;
   width: 300px !important;
-    height: auto !important;
-    
+  height: auto !important;
 }
 
 .side-cont {
-    width: 17%;
-    display: flex;
-    flex-direction: column;
-    height: 80%;
-    position: absolute;
-    /* left:3% */
+  width: 17%;
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  position: absolute;
+  /* left:3% */
 }
-.side-cont:nth-of-type(1){
-    left:3%
+.side-cont:nth-of-type(1) {
+  left: 3%;
 }
-.wine-side{
-    right:2%;
-    bottom:2%;
-    position: absolute;
-    height:100vh
+.wine-side {
+  right: 2%;
+  bottom: 2%;
+  position: absolute;
+  height: 100vh;
 }
 .wineimage {
-    right:2%;
-    bottom:2%;
-    position: absolute;
-    transition: 300ms linear;
+  right: 2%;
+  bottom: 2%;
+  position: absolute;
+  transition: 300ms linear;
 }
 
 .wineimage:hover {
-    transform: rotate(3deg) scale(1.1, 1.1) translateY(-20px);
-    transition: 100ms linear;
-
+  transform: rotate(3deg) scale(1.1, 1.1) translateY(-20px);
+  transition: 100ms linear;
 }
 
 .Masthead {
-    height: 3000vh !important;
+  height: 3000vh !important;
 }
 
 @media (min-width: 1024px) {
-
-
-.main {
+  .main {
     margin-top: 4%;
-}
-.title-section-pizza{
+  }
+  .title-section-pizza {
     text-align: center;
     font-size: 36px;
-    color: #3E603B;
-}
-.title-section-wine {
+    color: #3e603b;
+  }
+  .title-section-wine {
     text-align: center;
     font-size: 36px;
     color: #7d2d3f;
-}
-h1:after, h1:before {
-    content:"\A";
-    width:10px;
-    height:10px;
-    border-radius:50%;
-    background: #3E603B;
-    display:inline-block;
+  }
+  h1:after,
+  h1:before {
+    content: "\A";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #3e603b;
+    display: inline-block;
     margin: 10px 20px;
-}
-.title-section-wine:after, .title-section-wine:before {
-    content:"\A";
-    width:10px;
-    height:10px;
-    border-radius:50%;
+  }
+  .title-section-wine:after,
+  .title-section-wine:before {
+    content: "\A";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
     background: #7d2d3f;
-    display:inline-block;
+    display: inline-block;
     margin: 10px 20px;
-}
-.menu-container {
+  }
+  .menu-container {
     display: grid;
     width: 60%;
     margin: auto;
-    grid-template-columns: repeat(4, 1fr)
+    grid-template-columns: repeat(4, 1fr);
+  }
 
-}
-
-.card {
+  .card {
     margin: 15px;
     transition: 0.4s ease-out;
     position: relative;
     left: 0px;
-}
+  }
 
+  .card:hover {
+    transform: translateY(-20px) translateX(10px);
+    transition: 0.3s ease-out;
+  }
 
-.card:hover {
-  transform: translateY(-20px) translateX(10px);
-  transition: 0.3s ease-out;
-}
-
-/* .card:hover ~ .card {
+  /* .card:hover ~ .card {
   position: relative;
   left: 40px;
   transition: 0.4s ease-out;
 } */
-.image {
+  .image {
     position: absolute;
-  width: 300px !important;
+    width: 300px !important;
     height: auto !important;
-    
-}
+  }
 
-.side-cont {
+  .side-cont {
     width: 17%;
     display: flex;
     flex-direction: column;
     height: 80%;
     position: absolute;
     /* left:3% */
-}
-.side-cont:nth-of-type(1){
-    left:3%
-}
-.wine-side{
-    right:2%;
-    bottom:2%;
+  }
+  .side-cont:nth-of-type(1) {
+    left: 3%;
+  }
+  .wine-side {
+    right: 2%;
+    bottom: 2%;
     position: absolute;
-    height:100vh
-}
-.wineimage {
-    right:2%;
-    bottom:2%;
+    height: 100vh;
+  }
+  .wineimage {
+    right: 2%;
+    bottom: 2%;
     position: absolute;
     transition: 300ms linear;
-}
+  }
 
-
-
-.Masthead {
+  .Masthead {
     height: 3000vh !important;
-}
-
-
+  }
 }
 
 /* Tablet horiz to vertical
 ===============================*/
-@media (min-width: 1024px) and (max-width: 1280px)  { 
-
-.menu-container{
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .menu-container {
     width: 80%;
     grid-template-columns: repeat(3, 1fr);
-    margin-bottom: 4%
+    margin-bottom: 4%;
+  }
 
-}
-
-.card {
+  .card {
     margin: 5px;
     transition: 0.4s ease-out;
     position: relative;
     left: 0px;
-}
-.image {
+  }
+  .image {
     position: absolute;
-  width: 200px !important;
+    width: 200px !important;
     height: auto !important;
-    
+  }
 }
-}
-
 
 /* Horiz Tablet to Desktop
 ===============================*/
 @media (min-width: 768px) and (max-width: 1023px) {
-
-.menu-container{
+  .menu-container {
     width: 80%;
     grid-template-columns: repeat(3, 1fr);
-    margin-bottom: 4%
+    margin-bottom: 4%;
+  }
 
-}
-
-.card {
+  .card {
     margin: 5px;
     left: 0px;
-    margin: auto
-
+    margin: auto;
+  }
+  .image {
+    display: none;
+  }
 }
-.image {
-display: none;
-    
-}
-
-}
-
 
 /* Mobile to Tablet Portrait
 ===============================*/
 @media (min-width: 480px) and (max-width: 767px) {
-
-.menu-container{
+  .menu-container {
     width: 90%;
     grid-template-columns: repeat(3, 1fr);
-    margin-bottom: 4% auto
-}
+    margin-bottom: 4% auto;
+  }
 
-.card {
+  .card {
     margin: 5px;
     left: 0px;
-    margin: auto
-}
-.image {
-display: none;
-    
-}
-.card:hover {
-  transform: translateY(-10px) translateX(2px);
-}
-
+    margin: auto;
+  }
+  .image {
+    display: none;
+  }
+  .card:hover {
+    transform: translateY(-10px) translateX(2px);
+  }
 }
 @media (max-width: 480px) {
-
-.menu-container{
+  .menu-container {
     width: 90%;
     grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 4%
-}
+    margin-bottom: 4%;
+  }
 
-.card {
+  .card {
     margin: 5px;
     left: 0px;
-    margin: auto
-
-}
-.image {
-display: none;
-    
-}
-.card:hover {
-  transform: none;
-}
-
+    margin: auto;
+  }
+  .image {
+    display: none;
+  }
+  .card:hover {
+    transform: none;
+  }
 }
 </style>

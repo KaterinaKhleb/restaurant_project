@@ -1,19 +1,59 @@
-**The project web application is developed with Vue.js and is not created with commercial purpuses.
- The goal of the project is to extend experience working with Vue.js and develop more UI/UX skills.
- The main folder to start the project from is "client".**
+# Kate's Restaurant - Vue.js Web Application
 
+**A modern Vue.js restaurant web application showcasing menu items, locations, and contact information. This project is developed for educational purposes to demonstrate Vue.js skills and UI/UX design capabilities.**
 
- **Project setup**
-```
+## 🚀 Recently Updated (2024)
+
+This project has been fully modernized with:
+
+- Vue 2.7.16 (latest Vue 2.x with Composition API)
+- Updated security patches for all dependencies
+- Modern build tools and linting
+- Zero security vulnerabilities
+
+## 📋 Prerequisites
+
+- Node.js (v16 or higher recommended)
+- npm or yarn package manager
+
+## 🛠️ Project Setup
+
+```bash
 npm install
 ```
 
-**Compiles and hot-reloads for development**
-```
+## 🔥 Development Server
+
+```bash
 npm run serve
 ```
 
-**Compiles and minifies for production**
-```
+Access the app at: http://localhost:8080/
+
+## 🏗️ Production Build
+
+```bash
 npm run build
 ```
+
+## 🧹 Linting
+
+```bash
+npm run lint
+```
+
+## 🏗️ Project Structure
+
+- `src/components/` - Vue components (Header, Menu, Locations, etc.)
+- `src/store/` - Vuex store with menu data
+- `src/router/` - Vue Router configuration
+- `src/assets/` - Images and static assets
+
+## 🔧 Tech Stack
+
+- Vue.js 2.7.16
+- Vue Router 3.6.5
+- Vuex 3.6.2
+- Axios 1.6.2
+- Vue CLI 5.0.8
+- ESLint 8.55.0
