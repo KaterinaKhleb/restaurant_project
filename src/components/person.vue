@@ -1,72 +1,65 @@
 <template>
-    <div class="main-person"  @mouseover="hovered = true"  @mouseleave="hovered = false">
-        <div class="img-holder">
-                   <img class="photo" :src="getImgUrl(person.src)" v-bind:alt="person.src" />
-                     <div v-bind:class="classColor" class="overlay">
-                            <div class="text">
-                             
-                            </div>
-                      </div>
-            
-        </div>
-
-            <h1>{{person.name}}</h1>
-                <p>{{person.position}} in {{person.location}}</p>
-
-                   <img v-bind:class="{ visible: hovered }" class="icon icon-left" src="../assets/linkedin.svg"> 
-                    <img  v-bind:class="{ visible: hovered }" class="icon icon-right" src="../assets/facebook.svg"> 
-
+  <div class="main-person" @mouseover="hovered = true" @mouseleave="hovered = false">
+    <div class="img-holder">
+      <img class="photo" :src="getImgUrl(person.src)" v-bind:alt="person.src" />
+      <img v-bind:class="{ visible: hovered }" class="icon icon-left" src="../assets/linkedin.svg" />
+      <img v-bind:class="{ visible: hovered }" class="icon icon-right" src="../assets/facebook.svg" />
+      <div v-bind:class="classColor" class="overlay">
+        <div class="text"></div>
+      </div>
     </div>
+
+    <h1>{{ person.name }}</h1>
+    <p>{{ person.position }} in {{ person.location }}</p>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: 'Person',
-         props: {
-         person: Object,
-      },
-        data () {
-            return {
-                msg: 'Person',
-                hovered: false
-            }
-        },
-        methods: {
-             getImgUrl(pet) {
-            var images = require.context('../assets/', false, /\.png$/)
-            return images('./' + pet + ".png")
-        }
+export default {
+  name: "Person",
+  props: {
+    person: Object,
+  },
+  data() {
+    return {
+      msg: "Person",
+      hovered: false,
+    };
+  },
+  methods: {
+    getImgUrl(pet) {
+      var images = require.context("../assets/", false, /\.png$/);
+      return images("./" + pet + ".png");
     },
-     computed: {
-                classColor: function () {
-                    return {
-                    'green': this.person.id % 2===0 ,
-                    "red": this.person.id % 2===1
-                        }
-                    }
-                    }
-    }
+  },
+  computed: {
+    classColor: function () {
+      return {
+        green: this.person.id % 2 === 0,
+        red: this.person.id % 2 === 1,
+      };
+    },
+  },
+};
 </script>
 
 <style scoped>
-
-.main-person{
-
+.main-person {
+  position: relative;
 }
 img {
-    width: 100%;
-    height: auto
+  width: 100%;
+  height: auto;
 }
-h1{
-    color:#3E603B;
-    margin: 15px auto 0px auto;
-    font-size:24px
+h1 {
+  color: #3e603b;
+  margin: 15px auto 0px auto;
+  font-size: 24px;
 }
-p{
-    color:#7d2d3f;
-    font-family: 'EB Garamond', serif;
-    margin: 5px auto 0px auto
-
+p {
+  color: #7d2d3f;
+  font-family: "EB Garamond", serif;
+  margin: 5px auto 0px auto;
 }
 .overlay {
   position: absolute;
@@ -75,28 +68,17 @@ p{
   right: 0;
   overflow: hidden;
   width: 100%;
-  height:100%;
-  transition: .3s ease;
-  opacity:0;
-  background-color: black
+  height: 100%;
+  transition: 0.3s ease;
+  opacity: 0;
+  background-color: rgba(255, 255, 255, 0.5);
 }
-/* .green {
-  background-color: #3E603B;
 
-}
-.red {
-  background-color: #7d2d3f;
-} */
 
-.main-person:hover .photo{
-  -webkit-filter: grayscale(100%); 
-  filter: grayscale(100%);
-}
 
 .main-person:hover .overlay {
-  opacity: 0.4;
+  opacity: 1;
 }
-
 
 .img-holder {
   position: relative;
@@ -116,133 +98,125 @@ p{
   text-align: center;
 }
 .icon {
-    width: 32px;
-    height:auto;
-    margin:5px;
-    cursor:pointer
+  width: 32px;
+  height: auto;
+  margin: 0px 5px;
+  cursor: pointer;
+  z-index: 999;
 }
 
 .icon-left {
-    position: absolute;
-    left:10px;
-    bottom:10px;
-    opacity: 0;
-    transition: all 0.3s
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-60px, -50%);
+  opacity: 0;
+  transition: all 0.3s;
 }
 
 .icon-right {
-    position: absolute;
-    right:10px;
-    bottom:10px;
-    opacity: 0;
-    transition: all 0.3s
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(28px, -50%);
+  opacity: 0;
+  transition: all 0.3s;
 }
 
 .icon-right:hover {
-    transform: rotate(15deg) scale(1.1);
+  transform: translate(28px, -50%) rotate(15deg) scale(1.1);
 }
 
 .icon-left:hover {
-    transform: rotate(-15deg) scale(1.1);
+  transform: translate(-60px, -50%) rotate(-15deg) scale(1.1);
 }
 .visible {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* Tablet horiz to vertical
 ===============================*/
-@media (min-width: 1024px) and (max-width: 1280px)  { 
-
-
-
+@media (min-width: 1024px) and (max-width: 1280px) {
 }
-
 
 /* Horiz Tablet to Desktop
 ===============================*/
 @media (min-width: 768px) and (max-width: 1023px) {
-img {
+  img {
     width: 160px;
-    height: auto
-}
-h1{
-    color:#3E603B;
+    height: auto;
+  }
+  h1 {
+    color: #3e603b;
     font-size: 28px;
-    margin: 15px auto 0px auto
-}
-p{
-    color:#7d2d3f;
-    font-family: 'EB Garamond', serif;
+    margin: 15px auto 0px auto;
+  }
+  p {
+    color: #7d2d3f;
+    font-family: "EB Garamond", serif;
     margin: 5px auto 0px auto;
     font-size: 18px;
-
-}
-.icon {
+  }
+  .icon {
     width: 25px;
-    height:auto;
-    margin:5px;
-    cursor:pointer
+    height: auto;
+    margin: 5px;
+    cursor: pointer;
+  }
+  .overlay {
+    width: 160px;
+    margin: auto;
+  }
 }
-.overlay {
-  width: 160px;
-  margin:auto
-}
-}
-
 
 /* Mobile to Tablet Portrait
 ===============================*/
 @media (min-width: 480px) and (max-width: 767px) {
-
-img {
+  img {
     width: 120px;
-    height: auto
-}
-h1{
+    height: auto;
+  }
+  h1 {
     font-size: 22px;
-    margin: 15px auto 0px auto
-}
-p{
+    margin: 15px auto 0px auto;
+  }
+  p {
     margin: 5px auto 0px auto;
     font-size: 14px;
-
-}
-.icon {
+  }
+  .icon {
     width: 20px;
-    height:auto;
-    margin:5px;
-    cursor:pointer
-}
-.overlay {
-  width: 120px;
-  margin:auto
-}
-
+    height: auto;
+    margin: 5px;
+    cursor: pointer;
+  }
+  .overlay {
+    width: 120px;
+    margin: auto;
+  }
 }
 @media (max-width: 480px) {
-
-img {
+  img {
     width: 100px;
-    height: auto
-}
-h1{
+    height: auto;
+  }
+  h1 {
     font-size: 20px;
-    margin: 5px auto 0px auto
-}
-p{
+    margin: 5px auto 0px auto;
+  }
+  p {
     margin: 5px auto 0px auto;
     font-size: 14px;
-
-}
-.icon {
+  }
+  .icon {
     width: 14px;
-    height:auto;
-    margin:5px;
-    cursor:pointer
-}
-.overlay {
-  width: 100px;
-  margin:auto
-}
+    height: auto;
+    margin: 5px;
+    cursor: pointer;
+  }
+  .overlay {
+    width: 100px;
+    margin: auto;
+  }
 }
 </style>

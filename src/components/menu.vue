@@ -23,13 +23,7 @@
     </div>
 
     <div class="side-cont wine-side">
-      <!-- <parallax :speed-factor="0.15" direction="up"> -->
-      <img
-        class="image wineimage"
-        src="../assets/wine_draw.png"
-        alt="wine image"
-      />
-      <!-- </parallax> -->
+      <img class="image wineimage" src="../assets/wine_draw.png" alt="wine image" />
     </div>
   </div>
 </template>
@@ -96,7 +90,7 @@ h1:before {
   display: grid;
   width: 60%;
   margin: auto;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .card {
@@ -183,7 +177,7 @@ h1:before {
     display: grid;
     width: 60%;
     margin: auto;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .card {

@@ -44,7 +44,11 @@
             ,
              methods: {
             navigate(page) {
-                router.push({ name: page });
+                router.push({ name: page }).catch(err => {
+                    if (err.name !== 'NavigationDuplicated') {
+                        throw err;
+                    }
+                });
             }
         }
     }

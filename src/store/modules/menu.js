@@ -6,7 +6,7 @@ const state = {
             id: 1,
             name: "Diavola with olives",
             ingredients: "vegan cheese, tomatos, hot pepper, olives, ",
-            price: 7,
+            price: 9,
             src: "pizzav1",
             vegan: true
         },
@@ -14,7 +14,7 @@ const state = {
             id: 2,
             name: "Pepperoni-spinat",
             ingredients: "pepperoni, parmesan, mozarella, spinat, tomatos",
-            price: 9,
+            price: 12,
             src: "pizzav2",
             vegan: false
 
@@ -23,7 +23,7 @@ const state = {
             id: 3,
             name: "Cheesy paprika",
             ingredients: "brie, cheddar, paprika, olives, leek",
-            price: 8,
+            price: 10,
             src: "pizzav3",
             vegan: false
         },
@@ -31,7 +31,7 @@ const state = {
             id: 4,
             name: "Vegetarian",
             ingredients: "paprika, zucchini, green and black olives, leek, tomatos",
-            price: 7,
+            price: 11,
             src: "pizzav4",
             vegan: true
 
@@ -40,7 +40,7 @@ const state = {
             id: 5,
             name: "Quattro Formaggi",
             ingredients: "brie, cheddar, blue cheese, mozzarella, tomatos",
-            price: 10,
+            price: 12,
             src: "pizzav9",
             vegan: false
 
@@ -49,7 +49,7 @@ const state = {
             id: 6,
             name: "Ruccola",
             ingredients: "tomatos, vegan parmesan, mozzarella, ruccola",
-            price: 8,
+            price: 10,
             src: "pizzav6",
             vegan: true
 
@@ -58,7 +58,7 @@ const state = {
             id: 7,
             name: "Cranberry-Beef",
             ingredients: "cranberry souce, beef, onion, garlic, spinat",
-            price: 7,
+            price: 13,
             src: "pizzav7",
             vegan: false
 
@@ -76,24 +76,22 @@ const state = {
             id: 9,
             name: "Cherry-bomb",
             ingredients: "cherry tomatos, parmesan, vegan mozarella, spinat",
-            price: 7,
+            price: 10,
             src: "pizzav5",
             vegan: true
 
         },
 
-
     ],
 
 
     wine: [
-
         {
             id: 1,
             name: "Yellow fall",
             sweet: "Dry",
             region: "Tuscany",
-            price: 8,
+            price: 13,
             src: "wine1",
             color: "white"
         },
@@ -102,7 +100,7 @@ const state = {
             name: "Slumehof",
             sweet: "Semi-sweet",
             region: "Sardinia",
-            price: 9,
+            price: 14,
             src: "wine2",
             color: "white"
 
@@ -112,7 +110,7 @@ const state = {
             name: "Jacob's Greek",
             sweet: "Sweet",
             region: "Apulia",
-            price: 7,
+            price: 10,
             src: "wine3",
             color: "red"
 
@@ -143,7 +141,7 @@ const state = {
             name: "Bird Bottle",
             sweet: "Sweet",
             region: "Tuscany",
-            price: 8,
+            price: 10,
             src: "wine6",
             color: "white"
 
@@ -153,7 +151,7 @@ const state = {
             name: "Lallier Laborie",
             sweet: "Semi-sweet",
             region: "Apulia",
-            price: 9,
+            price: 11,
             src: "wine7",
             color: "red"
 
@@ -163,7 +161,7 @@ const state = {
             name: "Everything is wine",
             sweet: "Dry",
             region: "Lombardy",
-            price: 7,
+            price: 14,
             src: "wine8",
             color: "red"
 
@@ -176,9 +174,7 @@ const state = {
             price: 10,
             src: "wine9",
             color: "red"
-
         }
-
 
     ],
 
